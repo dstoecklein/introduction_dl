@@ -1,2 +1,2 @@
-# introduction_dl
+# Introduction to Deep Learning
 Lecture Material
