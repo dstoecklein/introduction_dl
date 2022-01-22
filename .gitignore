@@ -1,1 +1,6 @@
-datasets/
+datasets/*.csv
+datasets/FashionMNIST
+datasets/MixedMNIST/*.csv
+datasets/MixedMNIST/images/*.png
+datasets/MixedMNIST/images/test/*.png
+datasets/MixedMNIST/images/train

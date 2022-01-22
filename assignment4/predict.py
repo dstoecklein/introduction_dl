@@ -23,3 +23,5 @@ def predict_and_save(model, test_loader, path, device):
 
     filename = 'submission_' + str(type(model).__name__) + datetime.now().strftime('_%Y-%m-%d_%H%M%S.csv')
     df.to_csv(path + filename, index=False, sep=",")
+
+    print('File saved under: {}'.format(path + filename))
