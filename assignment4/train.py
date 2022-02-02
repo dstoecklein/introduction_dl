@@ -32,9 +32,11 @@ def fit(model, train_loader, epochs, learning_rate, device, loss_func=nn.CrossEn
             cost = loss_func(logits, labels)
 
             # 3. cleaning gradients
+            # Otherwise, the gradient would be a combination of the old gradient, which you have already used to update your model parameters, and the newly-computed gradient. 
             optimizer.zero_grad()
 
             # 4. accumulate partial derivatives
+            # When you call loss.backward(), all it does is compute gradient of loss w.r.t all the parameters in loss that have requires_grad = True and store them in parameter.grad attribute for every parameter. optimizer.step() updates all the parameters based on parameter.grad
             cost.backward()
 
             # 5. step in the opposite direction of the gradient

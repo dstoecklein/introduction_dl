@@ -9,6 +9,7 @@ def comp_accuracy(model, data_loader, device):
 
     # turn on eval mode if model Inherits from nn.Module
     if isinstance(model, nn.Module):
+        #model.eval() is a kind of switch for some specific layers/parts of the model that behave differently during training and inference (evaluating) time. For example, Dropouts Layers, BatchNorm Layers etc. You need to turn off them during model evaluation, and .eval() will do it for you. 
         model.eval()
 
     with torch.no_grad():
